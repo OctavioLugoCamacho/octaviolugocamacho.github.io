@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Octavio Lugo Camacho</title>
+    <link>https://octaviolugocamacho.github.io/</link>
+    <description>Recent content on Octavio Lugo Camacho</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My experience in MakingDevs</title>
+      <link>https://octaviolugocamacho.github.io/posts/my_first_post/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://octaviolugocamacho.github.io/posts/my_first_post/</guid>
+      <description>I love it</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://octaviolugocamacho.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://octaviolugocamacho.github.io/about/</guid>
+      <description>Personal Information 26 years old 5626476922 Mexico City Professional Experience QPlus S.A. - C.V (2016) IT Technician: Installation and maintenance of computer equipment. Televisa S.A. - C.V (2021) IT Technician: Process automation with UIPath. MakingDevs (2021 - Current Job) Developer: Back End Developer. Education Enginering in Computer Systems Escuela Superior de Cómputo Instituto Politécnico Nacional January 2016 – January 2021 Digital Systems Technician CECyT No. 3 Estanislao Ramírez Ruíz Instituto Politécnico Nacional August 2012 – July 2015 Courses Technician in installation and repair of computer equipment IT technician Ruby Programming Springboot Course Groovy Programming JavaScript Course Skills Ruby Groovy JavaScript SQL Github </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Experience on Octavio Lugo Camacho</title>
+    <link>https://octaviolugocamacho.github.io/tags/experience/</link>
+    <description>Recent content in Experience on Octavio Lugo Camacho</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/tags/experience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My experience in MakingDevs</title>
+      <link>https://octaviolugocamacho.github.io/posts/my_first_post/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://octaviolugocamacho.github.io/posts/my_first_post/</guid>
+      <description>I love it</description>
+    </item>
+    
+  </channel>
+</rss>
