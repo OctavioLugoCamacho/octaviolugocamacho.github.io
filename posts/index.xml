@@ -13,7 +13,8 @@
       <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://octaviolugocamacho.github.io/posts/my_first_post/</guid>
-      <description>I love it</description>
+      <description>How did I get in? To enter MakingDevs I had an interview with two colleagues where they asked me some questions about my technical knowledge and skills. In addition, they proposed a typical algorithm which is the following
+FizzBuzz Test Write a program that displays the numbers from 1 to 100, substituting the multiples of 3 for the word &amp;ldquo;fizz&amp;rdquo;, the multiples of 5 for &amp;ldquo;buzz&amp;rdquo; and the multiples of both, that is, the multiples of 3 and 5 ( or 15), by the word &amp;ldquo;fizzbuzz&amp;rdquo;.</description>
     </item>
     
   </channel>
