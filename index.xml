@@ -6,7 +6,16 @@
     <description>Recent content on Octavio Lugo Camacho</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ruby</title>
+      <link>https://octaviolugocamacho.github.io/posts/ruby/</link>
+      <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://octaviolugocamacho.github.io/posts/ruby/</guid>
+      <description>Ruby is&amp;hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.</description>
+    </item>
+    
     <item>
       <title>My experience in MakingDevs</title>
       <link>https://octaviolugocamacho.github.io/posts/my_first_post/</link>
