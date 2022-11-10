@@ -13,10 +13,14 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ruby"/>
-<meta name="twitter:description" content="Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write."/>
+<meta name="twitter:description" content="What is Ruby? Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.
+How to install Ruby with RVM? Install RVM Run the following commands on your production server to install RVM:
+$ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 $ curl -sSL https://get.rvm.io | sudo bash -s stable $ sudo usermod -a -G rvm `whoami` You may need to use gpg2 instead of gpg on some systems."/>
 
     <meta property="og:title" content="Ruby" />
-<meta property="og:description" content="Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write." />
+<meta property="og:description" content="What is Ruby? Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.
+How to install Ruby with RVM? Install RVM Run the following commands on your production server to install RVM:
+$ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 $ curl -sSL https://get.rvm.io | sudo bash -s stable $ sudo usermod -a -G rvm `whoami` You may need to use gpg2 instead of gpg on some systems." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://octaviolugocamacho.github.io/posts/ruby/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-12T00:00:00+00:00" />
@@ -89,7 +93,7 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          1 min read
+          5 min read
         </div>
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
@@ -103,7 +107,154 @@
       </div>
     </header>
     <div class="post-content">
-      <p>Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.</p>
+      <h1 id="what-is-ruby">What is Ruby?</h1>
+<p>Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.</p>
+<h1 id="how-to-install-ruby-with-rvm">How to install Ruby with RVM?</h1>
+<h2 id="install-rvm">Install RVM</h2>
+<p>Run the following commands on your production server to install RVM:</p>
+<pre tabindex="0"><code>$ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+$ curl -sSL https://get.rvm.io | sudo bash -s stable
+$ sudo usermod -a -G rvm `whoami`
+</code></pre><p>You may need to use gpg2 instead of gpg on some systems.</p>
+<p>On systems where sudo is configured with secure_path, the shell environment needs to be modified to set rvmsudo_secure_path=1. secure_path is set on most Linux systems, but not on macOS. The following command tries to autodetect whether it is necessary to install rvmsudo_secure_path=1, and only installs the environment variable if it is the code.</p>
+<pre tabindex="0"><code>$ if sudo grep -q secure_path /etc/sudoers; then sudo sh -c &#34;echo export rvmsudo_secure_path=1 &gt;&gt; /etc/profile.d/rvm_secure_path.sh&#34; &amp;&amp; echo Environment variable installed; fi
+</code></pre><p>When you are done with all this, relogin to your server to activate RVM. This is important: if you don&rsquo;t relogin, RVM doesn&rsquo;t work. Also if you use gnu screen or another terminal multiplexer, RVM also won&rsquo;t work; you must use a plain ssh session.</p>
+<h2 id="install-the-ruby-version-you-want">Install the Ruby version you want</h2>
+<p>Usually, installing the latest Ruby version will suffice. If you are deploying the example app from the quickstart, then that example application works with all Ruby versions.</p>
+<p>However, if you are deploying your own app, then your app may have a specific Ruby version requirement.</p>
+<p>To install the latest version of Ruby, run:</p>
+<pre tabindex="0"><code>$ rvm install ruby
+$ rvm --default use ruby
+</code></pre><p>To install a specific version of Ruby, run:</p>
+<pre tabindex="0"><code>$ rvm install ruby-X.X.X
+$ rvm --default use ruby-X.X.X
+</code></pre><p>Replace X.X.X with the Ruby version you want.</p>
+<h1 id="create-the-simplest-ruby-project-to-get-started">Create the simplest Ruby project to get started</h1>
+<p>Setting up a project/environment is always the first challenge you face when you are learning a new language.</p>
+<p>Although creating a Ruby project is not a difficult task, it might seem so when you are first starting or when you are doing it for first time. Having to understand all the necessary files to run a project might feel a bit overwhelming, specially when you are not familiar with the terminology and structure.</p>
+<p>Luckily, we have tools that could help us with the setting up and other configurations.</p>
+<h2 id="bundler--gemfile">Bundler &amp; Gemfile</h2>
+<p>Bundle is the most commonly used tool or gem (as Ruby packages are called) that could help with the management of the dependencies in the project (test libraries,…)</p>
+<p>Bundler needs to be installed in our system first and once successfully installed, the command bundle should be accessible to use.</p>
+<p>In a new terminal window, run the following command:</p>
+<pre tabindex="0"><code>$ gem install bundler
+</code></pre><p>One way to test if you have already installed it, it is running the following command and checking that a path is returned.</p>
+<pre tabindex="0"><code>$ which bundler
+</code></pre><p>To follow, create a project directory.</p>
+<pre tabindex="0"><code>$ mkdir ~/Workspace/coin_changer &amp;&amp; cd ~/Workspace/coin_changer
+</code></pre><p>Set bundle as your dependency manager running the following command:</p>
+<pre tabindex="0"><code>$ bundle init
+</code></pre><p>Bundle will automatically create a <code>Gemfile</code>, a file where your project dependencies will be specified.</p>
+<h2 id="structure">Structure</h2>
+<p>The most common structure used for a ruby project is to have two main directories:</p>
+<p>A directory called lib that will contain the source files.</p>
+<pre tabindex="0"><code>$ mkdir lib &amp;&amp; cd lib
+</code></pre><p>For a simplest project, just create a .rb file to include your source code:</p>
+<pre tabindex="0"><code>$ touch coin_changer.rb
+</code></pre><p>A <code>spec</code> directory that will contain the tests.</p>
+<pre tabindex="0"><code>$ mkdir spec &amp;&amp; cd spec
+</code></pre><p>Create the test file for the .rb file, previously created (Important! <code>spec</code> files have to be named with a _specsuffix or the tests will not run).</p>
+<pre tabindex="0"><code>$ touch coin_changer_spec.rb
+</code></pre><p>You will have something like this:</p>
+<pre tabindex="0"><code>|- lib
+   |- coin_changer.rb
+|
+|- spec
+   |- coin_changer_spec.rb
+|
+|- Gemfile
+</code></pre><h2 id="rspec">Rspec</h2>
+<p>Rspec is a testing framework that will help creating a running tests in Ruby. In order to work, it needs to be added to the <code>Gemfile</code> of your project.</p>
+<p>Include the RSpec dependency in the list of gems of the <code>Gemfile</code>:</p>
+<p>Install the dependencies (RSpec in this case) with bundle:</p>
+<pre tabindex="0"><code>$ bundle install
+</code></pre><p>and initiate it:</p>
+<pre tabindex="0"><code>$ rspec --init
+</code></pre><p>The previous command will also add a <code>spec_helper.rb</code> file to the spec directory.</p>
+<pre tabindex="0"><code>|- lib
+   |- coin_changer.rb
+|
+|- spec
+   |- spec_helper.rb
+   |- coin_changer_spec.rb
+|
+|- Gemfile
+|- Gemfile.lock
+</code></pre><p>To run the tests, now you will only need to run the following command:</p>
+<pre tabindex="0"><code>$ rspec
+</code></pre><h1 id="lets-do-an-exercise">Let&rsquo;s do an exercise</h1>
+<p>You will need something like this:</p>
+<pre tabindex="0"><code>|- lib
+   |- string_calculator.rb
+|
+|- spec
+   |- spec_helper.rb
+   |- string_calculator_spec.rb
+|
+|- Gemfile
+|- Gemfile.lock
+</code></pre><p>Then put this code in your file <code>string_calculator_spec.rb</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>require <span style="color:#e6db74">&#34;./lib/string_calculator&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>describe <span style="color:#66d9ef">StringCalculator</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    it <span style="color:#e6db74">&#34;returns zero&#34;</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        calculator <span style="color:#f92672">=</span> <span style="color:#66d9ef">StringCalculator</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    it <span style="color:#e6db74">&#34;returns the same number&#34;</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        calculator <span style="color:#f92672">=</span> <span style="color:#66d9ef">StringCalculator</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;2&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;8&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;99&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">99</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    it <span style="color:#e6db74">&#34;returns the sum of 2 numbers&#34;</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        calculator <span style="color:#f92672">=</span> <span style="color:#66d9ef">StringCalculator</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;2,3&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;7,11&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">18</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    it <span style="color:#e6db74">&#34;returns the sum of any numbers&#34;</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        calculator <span style="color:#f92672">=</span> <span style="color:#66d9ef">StringCalculator</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;1,2,3,4,5&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">15</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;10,20,30&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    it <span style="color:#e6db74">&#34;returns the sum of any numbers with another spliter&#34;</span> <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        calculator <span style="color:#f92672">=</span> <span style="color:#66d9ef">StringCalculator</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">2,3</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">4,5&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">15</span>)
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;10</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">20</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">30&#34;</span>)
+</span></span><span style="display:flex;"><span>        expect(result)<span style="color:#f92672">.</span>to eq(<span style="color:#ae81ff">60</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Then put this code in your file <code>string_calculator.rb</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StringCalculator</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">add</span>(string)
+</span></span><span style="display:flex;"><span>        string <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> ? <span style="color:#ae81ff">0</span> : string<span style="color:#f92672">.</span>tr(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#e6db74">&#34;,&#34;</span>)<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;,&#34;</span>)<span style="color:#f92672">.</span>map(<span style="color:#f92672">&amp;</span><span style="color:#e6db74">:to_i</span>)<span style="color:#f92672">.</span>sum
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __FILE__ <span style="color:#f92672">==</span> $0
+</span></span><span style="display:flex;"><span>    calculator <span style="color:#f92672">=</span> <span style="color:#66d9ef">StringCalculator</span><span style="color:#f92672">.</span>new
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> calculator<span style="color:#f92672">.</span>add(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    p result
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">end</span>
+</span></span></code></pre></div><p>Now run this:</p>
+<pre tabindex="0"><code>$ rspec spec/string_calculator_spec.rb
+</code></pre><p>You will see something like this:</p>
+<p><img src="../../rspec_example.png" alt="Terminal"></p>
 
     </div>
     <div class="post-footer">

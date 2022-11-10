@@ -13,7 +13,9 @@
       <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://octaviolugocamacho.github.io/posts/ruby/</guid>
-      <description>Ruby is&amp;hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.</description>
+      <description>What is Ruby? Ruby is&amp;hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.
+How to install Ruby with RVM? Install RVM Run the following commands on your production server to install RVM:
+$ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 $ curl -sSL https://get.rvm.io | sudo bash -s stable $ sudo usermod -a -G rvm `whoami` You may need to use gpg2 instead of gpg on some systems.</description>
     </item>
     
   </channel>
