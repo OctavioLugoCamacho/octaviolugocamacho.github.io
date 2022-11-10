@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Octavio Lugo Camacho</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Groovy</title>
+      <link>https://octaviolugocamacho.github.io/posts/groovy/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://octaviolugocamacho.github.io/posts/groovy/</guid>
+      <description>What is Groovy? Groovy is powerful, optionally typed and dynamic language to develop an application on Java Platform where its syntax is Java-like. Its typing discipline is strong, static, and dynamic. The best things about Groovy are that since it extends JDK, it accepts Java code. Groovy can be used as both programming and scripting Language. Groovy is a superset of Java which means Java program will run in Groovy environment but vice-versa may or may not be possible.</description>
+    </item>
+    
     <item>
       <title>Ruby</title>
       <link>https://octaviolugocamacho.github.io/posts/ruby/</link>
@@ -14,6 +23,7 @@
       
       <guid>https://octaviolugocamacho.github.io/posts/ruby/</guid>
       <description>What is Ruby? Ruby is&amp;hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.
+You can check the documentation Here!
 How to install Ruby with RVM? Install RVM Run the following commands on your production server to install RVM:
 $ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 $ curl -sSL https://get.rvm.io | sudo bash -s stable $ sudo usermod -a -G rvm `whoami` You may need to use gpg2 instead of gpg on some systems.</description>
     </item>

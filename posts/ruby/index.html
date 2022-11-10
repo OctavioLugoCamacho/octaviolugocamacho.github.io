@@ -14,11 +14,13 @@
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ruby"/>
 <meta name="twitter:description" content="What is Ruby? Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.
+You can check the documentation Here!
 How to install Ruby with RVM? Install RVM Run the following commands on your production server to install RVM:
 $ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 $ curl -sSL https://get.rvm.io | sudo bash -s stable $ sudo usermod -a -G rvm `whoami` You may need to use gpg2 instead of gpg on some systems."/>
 
     <meta property="og:title" content="Ruby" />
 <meta property="og:description" content="What is Ruby? Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.
+You can check the documentation Here!
 How to install Ruby with RVM? Install RVM Run the following commands on your production server to install RVM:
 $ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 $ curl -sSL https://get.rvm.io | sudo bash -s stable $ sudo usermod -a -G rvm `whoami` You may need to use gpg2 instead of gpg on some systems." />
 <meta property="og:type" content="article" />
@@ -107,10 +109,12 @@ $ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A170311
       </div>
     </header>
     <div class="post-content">
-      <h1 id="what-is-ruby">What is Ruby?</h1>
+      <p><img src="../../ruby.svg" alt="Ruby"></p>
+<h1 id="what-is-ruby">What is Ruby?</h1>
 <p>Ruby is&hellip; A dynamic, open source programming language focused on simplicity and productivity. Its elegant syntax feels natural to read and easy to write.</p>
+<p>You can check the documentation <a href="https://www.ruby-lang.org/en/documentation/" title="Here">Here</a>!</p>
 <h1 id="how-to-install-ruby-with-rvm">How to install Ruby with RVM?</h1>
-<h2 id="install-rvm">Install RVM</h2>
+<h3 id="install-rvm">Install RVM</h3>
 <p>Run the following commands on your production server to install RVM:</p>
 <pre tabindex="0"><code>$ sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 $ curl -sSL https://get.rvm.io | sudo bash -s stable
@@ -119,7 +123,7 @@ $ sudo usermod -a -G rvm `whoami`
 <p>On systems where sudo is configured with secure_path, the shell environment needs to be modified to set rvmsudo_secure_path=1. secure_path is set on most Linux systems, but not on macOS. The following command tries to autodetect whether it is necessary to install rvmsudo_secure_path=1, and only installs the environment variable if it is the code.</p>
 <pre tabindex="0"><code>$ if sudo grep -q secure_path /etc/sudoers; then sudo sh -c &#34;echo export rvmsudo_secure_path=1 &gt;&gt; /etc/profile.d/rvm_secure_path.sh&#34; &amp;&amp; echo Environment variable installed; fi
 </code></pre><p>When you are done with all this, relogin to your server to activate RVM. This is important: if you don&rsquo;t relogin, RVM doesn&rsquo;t work. Also if you use gnu screen or another terminal multiplexer, RVM also won&rsquo;t work; you must use a plain ssh session.</p>
-<h2 id="install-the-ruby-version-you-want">Install the Ruby version you want</h2>
+<h3 id="install-the-ruby-version-you-want">Install the Ruby version you want</h3>
 <p>Usually, installing the latest Ruby version will suffice. If you are deploying the example app from the quickstart, then that example application works with all Ruby versions.</p>
 <p>However, if you are deploying your own app, then your app may have a specific Ruby version requirement.</p>
 <p>To install the latest version of Ruby, run:</p>
@@ -133,7 +137,7 @@ $ rvm --default use ruby-X.X.X
 <p>Setting up a project/environment is always the first challenge you face when you are learning a new language.</p>
 <p>Although creating a Ruby project is not a difficult task, it might seem so when you are first starting or when you are doing it for first time. Having to understand all the necessary files to run a project might feel a bit overwhelming, specially when you are not familiar with the terminology and structure.</p>
 <p>Luckily, we have tools that could help us with the setting up and other configurations.</p>
-<h2 id="bundler--gemfile">Bundler &amp; Gemfile</h2>
+<h3 id="bundler--gemfile">Bundler &amp; Gemfile</h3>
 <p>Bundle is the most commonly used tool or gem (as Ruby packages are called) that could help with the management of the dependencies in the project (test libraries,…)</p>
 <p>Bundler needs to be installed in our system first and once successfully installed, the command bundle should be accessible to use.</p>
 <p>In a new terminal window, run the following command:</p>
@@ -145,7 +149,7 @@ $ rvm --default use ruby-X.X.X
 </code></pre><p>Set bundle as your dependency manager running the following command:</p>
 <pre tabindex="0"><code>$ bundle init
 </code></pre><p>Bundle will automatically create a <code>Gemfile</code>, a file where your project dependencies will be specified.</p>
-<h2 id="structure">Structure</h2>
+<h3 id="structure">Structure</h3>
 <p>The most common structure used for a ruby project is to have two main directories:</p>
 <p>A directory called lib that will contain the source files.</p>
 <pre tabindex="0"><code>$ mkdir lib &amp;&amp; cd lib
@@ -163,7 +167,7 @@ $ rvm --default use ruby-X.X.X
    |- coin_changer_spec.rb
 |
 |- Gemfile
-</code></pre><h2 id="rspec">Rspec</h2>
+</code></pre><h3 id="rspec">Rspec</h3>
 <p>Rspec is a testing framework that will help creating a running tests in Ruby. In order to work, it needs to be added to the <code>Gemfile</code> of your project.</p>
 <p>Include the RSpec dependency in the list of gems of the <code>Gemfile</code>:</p>
 <p>Install the dependencies (RSpec in this case) with bundle:</p>

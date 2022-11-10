@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Groovy on Octavio Lugo Camacho</title>
+    <link>https://octaviolugocamacho.github.io/tags/groovy/</link>
+    <description>Recent content in Groovy on Octavio Lugo Camacho</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://octaviolugocamacho.github.io/tags/groovy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Groovy</title>
+      <link>https://octaviolugocamacho.github.io/posts/groovy/</link>
+      <pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://octaviolugocamacho.github.io/posts/groovy/</guid>
+      <description>What is Groovy? Groovy is powerful, optionally typed and dynamic language to develop an application on Java Platform where its syntax is Java-like. Its typing discipline is strong, static, and dynamic. The best things about Groovy are that since it extends JDK, it accepts Java code. Groovy can be used as both programming and scripting Language. Groovy is a superset of Java which means Java program will run in Groovy environment but vice-versa may or may not be possible.</description>
+    </item>
+    
+  </channel>
+</rss>
