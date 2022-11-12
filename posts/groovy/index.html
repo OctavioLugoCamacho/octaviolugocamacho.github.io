@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Groovy // Octavio Lugo Camacho</title>
+    <title>What is Groovy and how do I install it? // Octavio Lugo Camacho</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.104.3" />
@@ -12,10 +12,10 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Groovy"/>
+<meta name="twitter:title" content="What is Groovy and how do I install it?"/>
 <meta name="twitter:description" content="What is Groovy? Groovy is powerful, optionally typed and dynamic language to develop an application on Java Platform where its syntax is Java-like. Its typing discipline is strong, static, and dynamic. The best things about Groovy are that since it extends JDK, it accepts Java code. Groovy can be used as both programming and scripting Language. Groovy is a superset of Java which means Java program will run in Groovy environment but vice-versa may or may not be possible."/>
 
-    <meta property="og:title" content="Groovy" />
+    <meta property="og:title" content="What is Groovy and how do I install it?" />
 <meta property="og:description" content="What is Groovy? Groovy is powerful, optionally typed and dynamic language to develop an application on Java Platform where its syntax is Java-like. Its typing discipline is strong, static, and dynamic. The best things about Groovy are that since it extends JDK, it accepts Java code. Groovy can be used as both programming and scripting Language. Groovy is a superset of Java which means Java program will run in Groovy environment but vice-versa may or may not be possible." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://octaviolugocamacho.github.io/posts/groovy/" /><meta property="article:section" content="posts" />
@@ -75,7 +75,7 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Groovy</h1>
+      <h1 class ="post-title">What is Groovy and how do I install it?</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -121,16 +121,18 @@
 <pre tabindex="0"><code>$ groovy -version
 </code></pre><p>That’s all there is to it!</p>
 <h1 id="lets-do-an-exercise">Let&rsquo;s do an exercise</h1>
-<h3 id="multiples-of-3-or-5">Multiples of 3 or 5</h3>
-<p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.</p>
-<p>Find the sum of all the multiples of 3 or 5 below 1000.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<h3 id="sum-square-difference">Sum square difference</h3>
+<p>The sum of the squares of the first ten natural numbers is, 1^2+2^2+&hellip;+10^2 = 385</p>
+<p>The square of the sum of the first ten natural numbers is, (1+2+&hellip;+10)^2 = 55^2 = 3025 Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.</p>
+<p>Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-groovy" data-lang="groovy"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> num <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">..</span><span style="color:#ae81ff">999</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> i <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span> sum <span style="color:#f92672">+=</span> i<span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> sumOfSquares <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>num <span style="color:#f92672">*</span> <span style="color:#f92672">(</span>num <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">))</span> <span style="color:#e6db74">/ 2
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">sumOfSquares *= sumOfSquares
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">def squareOfSum = (num * (num + 1) * (2 * num + 1)) /</span> <span style="color:#ae81ff">6</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>println sum
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> difference <span style="color:#f92672">=</span> sumOfSquares <span style="color:#f92672">-</span> squareOfSum
 </span></span></code></pre></div><p>We need to run the next command:</p>
 <pre tabindex="0"><code>$ groovy exercise.groovy
 </code></pre><p>And we get the reult that is 233168.</p>
